@@ -33,6 +33,10 @@
   /* Tipografía */
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-display: 'Playfair Display', Georgia, serif;
+
+  /* Espaciado y layout */
+  --section-padding-y: 6rem;
+  --section-padding-y-lg: 8rem;
 }
 
 /* Estilos base */
@@ -90,4 +94,72 @@ body {
 
 .shadow-warm-lg {
   box-shadow: 0 20px 60px -15px rgba(224, 123, 0, 0.2);
+}
+
+.shadow-soft {
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-soft-lg {
+  box-shadow: 0 8px 40px -8px rgba(0, 0, 0, 0.12);
+}
+
+/* Contenedor principal mejorado */
+.container-main {
+  width: 100%;
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-main {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-main {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* Secciones con espaciado consistente */
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+/* Animación de entrada escalonada */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+/* Mejora de líneas decorativas */
+.divider-gradient {
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--color-saffron), transparent);
+  border-radius: 2px;
 }
