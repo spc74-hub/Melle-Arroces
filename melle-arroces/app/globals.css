@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Colores mediterráneos - Melle Arroces */
+  --color-saffron: #E07B00;
+  --color-saffron-light: #F59E42;
+  --color-saffron-dark: #B85F00;
+
+  --color-terracotta: #C4A77D;
+  --color-terracotta-light: #D4C09D;
+  --color-terracotta-dark: #A88A5D;
+
+  --color-bone: #FAF8F5;
+  --color-bone-dark: #F0EDE8;
+
+  --color-olive: #5B6B4F;
+  --color-olive-light: #7A8B6F;
+  --color-olive-dark: #3C4D30;
+
+  --color-charcoal: #1A1A1A;
+  --color-charcoal-light: #2A2A2A;
+
+  /* Sistema de colores base */
+  --color-background: var(--color-bone);
+  --color-foreground: var(--color-charcoal);
+  --color-primary: var(--color-saffron);
+  --color-primary-foreground: white;
+  --color-secondary: var(--color-terracotta);
+  --color-accent: var(--color-olive);
+  --color-muted: var(--color-bone-dark);
+  --color-muted-foreground: #666666;
+
+  /* Tipografía */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+}
+
+/* Estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  font-feature-settings: 'rlig' 1, 'calt' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utilidades personalizadas */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-saffron) 0%, var(--color-terracotta) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animaciones suaves */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Sombras personalizadas */
+.shadow-warm {
+  box-shadow: 0 10px 40px -10px rgba(224, 123, 0, 0.15);
+}
+
+.shadow-warm-lg {
+  box-shadow: 0 20px 60px -15px rgba(224, 123, 0, 0.2);
+}
